@@ -21,12 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2K-1w-SMG">
+                                <rect key="frame" x="0.0" y="171" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="T1n-Nl-vNw"/>
+                                </connections>
+                            </searchBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tN3-iT-ihs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bJx-Xg-kqZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -84,6 +92,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="barSearch" destination="p2K-1w-SMG" id="vCk-u5-cQj"/>
                         <outlet property="myCollectionView" destination="TEO-YD-u8W" id="0zv-NL-MJM"/>
                     </connections>
                 </viewController>

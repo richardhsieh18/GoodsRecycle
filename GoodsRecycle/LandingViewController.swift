@@ -10,12 +10,27 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class LandingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
+
+struct Good
+{
+    var resizeImage:String
+    var image:String
+    var model:String
+    var location:String
+    var address:String
+    var latitude:String
+    var longitude:String
+}
+
+class LandingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate
 {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
+    @IBOutlet weak var barSearch: UISearchBar!
     
-    var arrGoods = [Any]()
+    var arrGoods = [Good]()
+    var arrSearch = [Good]()
+    var searchBarActive:Bool = false
 
     override func viewDidLoad()
     {
@@ -23,10 +38,17 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        barSearch.delegate = self
 
         loadData()
         //Animation,Failed
         //animateTable()
+        //self.arrSearch = self.arrGoods
+        //self.updateData()
+        
+        //dismiss keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     } // viewDidLoad
     
     func loadData()
@@ -50,11 +72,15 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 
             if let result = JSON["result"] as? [String:Any]
             {
-                if let results = result["results"] as? [Any]
+                if let results = result["results"] as? [[String:Any]]
                 {
-                    self.arrGoods = results
+                    for p in results
+                    {
+                        let goodItem = Good.init(resizeImage: p["縮圖網址"] as! String, image: p["照片網址"] as! String, model: p["物品類別"] as! String, location: p["地點"] as! String, address: p["地址"] as! String, latitude: p["緯度"] as! String, longitude: p["經度"] as! String)
+                        self.arrGoods.append(goodItem)
+                    }
+                    self.arrSearch = self.arrGoods
                     self.myCollectionView.reloadData()
-                    
                 }
             }
         }
@@ -73,36 +99,57 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 //            assert(false,"Error")
 //        }
 //    }
+    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrGoods.count
+        if self.searchBarActive
+        {
+            return arrSearch.count
+        }
+            return arrGoods.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
-        guard let cellData = self.arrGoods[indexPath.row] as? [String:Any] else {
-            print("get row \(indexPath.row) error")
-            return cell
-        }
-
         
+//        guard let cellData = self.arrGoods[indexPath.row] as? [String:Any] else {
+//            print("get row \(indexPath.row) error")
+//            return cell
+//        }
         let placeholderImage = UIImage(named: "nsslsnapchat")
-        cell.lblTitle.text = cellData["物品類別"] as? String
-        cell.lblLocation.text = cellData["地點"] as? String
-        let img_list = cellData["縮圖網址"] as? String
-        if let img_url = URL(string: img_list!)
+
+        if self.searchBarActive
+        {
+            let cellData = self.arrSearch[indexPath.row]
+            cell.lblTitle.text = cellData.model //cellData["物品類別"] as? String
+            cell.lblLocation.text = cellData.location //cellData["地點"] as? String
+            let img_list = cellData.resizeImage //cellData["縮圖網址"] as? String
+            if let img_url = URL(string: img_list)
+            {
+                cell.imgResize.af_setImage(withURL: img_url)
+            }else{
+                cell.imgResize.image = placeholderImage
+            }
+        }else{
+        let cellData = arrGoods[indexPath.row]
+        cell.lblTitle.text = cellData.model //cellData["物品類別"] as? String
+        cell.lblLocation.text = cellData.location //cellData["地點"] as? String
+        let img_list = cellData.resizeImage //cellData["縮圖網址"] as? String
+        if let img_url = URL(string: img_list)
         {
             cell.imgResize.af_setImage(withURL: img_url)
         }else{
             cell.imgResize.image = placeholderImage
         }
+        
+        }
+        
+        
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
         cell.layer.borderColor = UIColor.orange.cgColor
         cell.layer.borderWidth = 1
-        
-        
         return cell
     }
 
@@ -130,6 +177,45 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 //        }
 //    }
 
+    
+    //MARK: searchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            if searchText == ""
+            {
+                self.arrSearch = self.arrGoods
+                DispatchQueue.main.async
+                {
+                    self.updateData()
+                }
+                self.searchBarActive = false
+                return
+            }
+            self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText)}
+            self.searchBarActive = true
+            DispatchQueue.main.async {
+                self.updateData()
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.barSearch.text = ""
+        self.arrSearch = self.arrGoods
+        barSearch.resignFirstResponder()
+        self.updateData()
+    }
+    
+    func updateData()
+    {
+        self.myCollectionView.reloadData()
+    }
+    
+    //MARK: dismiss Keyboard
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 
 }
 
