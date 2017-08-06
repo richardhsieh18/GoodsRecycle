@@ -1,0 +1,6 @@
+framework module Pods_GoodsRecycle {
+  umbrella header "Pods-GoodsRecycle-umbrella.h"
+
+  export *
+  module * { export * }
+}
