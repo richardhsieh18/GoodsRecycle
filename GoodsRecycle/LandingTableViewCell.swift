@@ -15,6 +15,4 @@ class LandingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblLocation: UILabel!
     
 
-    
-
 }

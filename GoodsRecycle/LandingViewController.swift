@@ -40,12 +40,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         barSearch.delegate = self
+        //允許CollectionView選取
+        myCollectionView.allowsSelection = true
 
         loadData()
-        //Animation,Failed
-        //animateTable()
-        //self.arrSearch = self.arrGoods
-        //self.updateData()
         
         //dismiss keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -53,7 +51,6 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     } // viewDidLoad
     
     override func viewWillAppear(_ animated: Bool) {
-
     }
     
     func loadData()
@@ -118,14 +115,14 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
         
-        cell.transform = CGAffineTransform(scaleX: 1.1 , y: 1.1)
-        //Damping是彈跳數，越接近0，彈跳數越大
-        //Velocity是動畫的初始速度，越接近0越平滑
-        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0 , options: .curveEaseInOut, animations: {
-            cell.transform = CGAffineTransform(scaleX: 0.98 , y: 0.98)
-        }) { (animated) in
-            cell.transform = CGAffineTransform.identity
-        }
+//        cell.transform = CGAffineTransform(scaleX: 1.1 , y: 1.1)
+//        //Damping是彈跳數，越接近0，彈跳數越大
+//        //Velocity是動畫的初始速度，越接近0越平滑
+//        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0 , options: .curveEaseInOut, animations: {
+//            cell.transform = CGAffineTransform(scaleX: 0.98 , y: 0.98)
+//        }) { (animated) in
+//            cell.transform = CGAffineTransform.identity
+//        }
         
 //        guard let cellData = self.arrGoods[indexPath.row] as? [String:Any] else {
 //            print("get row \(indexPath.row) error")
@@ -166,9 +163,19 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         cell.layer.borderWidth = 1
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        print("123")
+        
+        performSegue(withIdentifier: "pop", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pop"  {
+            let vc = segue.destination as! PopViewController
+            let selectItemRows = myCollectionView.indexPathsForSelectedItems
+            vc.cellData = self.searchBarActive ? arrSearch[(selectItemRows?[0].row)!] : arrGoods[(selectItemRows?[0].row)!]
+        }
     }
     
     
