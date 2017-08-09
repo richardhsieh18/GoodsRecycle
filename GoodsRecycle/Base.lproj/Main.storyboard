@@ -100,8 +100,36 @@
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="122.28260869565219"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="UUx-3q-ZM8">
+            <objects>
+                <viewController id="eke-Tv-TDP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcc-vr-ZdN"/>
+                        <viewControllerLayoutGuide type="bottom" id="gWP-u6-xJ1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GCB-hD-r4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backlogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-bz-rEB">
+                                <rect key="frame" x="47" y="84" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9D-5L-Gn1">
+                                <rect key="frame" x="87" y="126" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="syn-bw-FWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="122"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="backlogo.jpg" width="414" height="736"/>
         <image name="logo.jpg" width="414" height="275"/>
     </resources>
 </document>

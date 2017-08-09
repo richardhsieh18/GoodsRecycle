@@ -11,11 +11,10 @@ import UIKit
 class LandingCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imgResize: UIImageView!
-    
     @IBOutlet weak var lblTitle: UILabel!
-    
     @IBOutlet weak var lblLocation: UILabel!
     
 
+    
 
 }

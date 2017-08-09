@@ -15,6 +15,7 @@
 		04984A241F33F7DC00407B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04984A221F33F7DC00407B1D /* Main.storyboard */; };
 		04984A261F33F7DC00407B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04984A251F33F7DC00407B1D /* Assets.xcassets */; };
 		04984A291F33F7DC00407B1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04984A271F33F7DC00407B1D /* LaunchScreen.storyboard */; };
+		04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04C524B21F3B31E5002CD6A0 /* backlogo.jpg */; };
 		3AB77A7E9B2DB4FE6DFFCF7A /* Pods_GoodsRecycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FD67A948DF1278B936A5C /* Pods_GoodsRecycle.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		04984A251F33F7DC00407B1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04984A281F33F7DC00407B1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04984A2A1F33F7DC00407B1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C524B21F3B31E5002CD6A0 /* backlogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlogo.jpg; sourceTree = "<group>"; };
 		113C568B2FD10F9A452CEBDD /* Pods-GoodsRecycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodsRecycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodsRecycle/Pods-GoodsRecycle.debug.xcconfig"; sourceTree = "<group>"; };
 		CA6FD67A948DF1278B936A5C /* Pods_GoodsRecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodsRecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 		04984A1D1F33F7DC00407B1D /* GoodsRecycle */ = {
 			isa = PBXGroup;
 			children = (
+				04C524B21F3B31E5002CD6A0 /* backlogo.jpg */,
 				040A79091F34DA4800B65B58 /* logo.jpg */,
 				045172531F34084500C907F3 /* nsslsnapchat.png */,
 				04984A1E1F33F7DC00407B1D /* AppDelegate.swift */,
@@ -164,6 +167,7 @@
 				04984A291F33F7DC00407B1D /* LaunchScreen.storyboard in Resources */,
 				040A790A1F34DA4800B65B58 /* logo.jpg in Resources */,
 				045172541F34084500C907F3 /* nsslsnapchat.png in Resources */,
+				04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */,
 				04984A261F33F7DC00407B1D /* Assets.xcassets in Resources */,
 				04984A241F33F7DC00407B1D /* Main.storyboard in Resources */,
 			);

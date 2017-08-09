@@ -36,6 +36,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     {
         super.viewDidLoad()
         
+        
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         barSearch.delegate = self
@@ -50,6 +51,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     } // viewDidLoad
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
     
     func loadData()
     {
@@ -113,6 +118,15 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
         
+        cell.transform = CGAffineTransform(scaleX: 1.1 , y: 1.1)
+        //Damping是彈跳數，越接近0，彈跳數越大
+        //Velocity是動畫的初始速度，越接近0越平滑
+        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0 , options: .curveEaseInOut, animations: {
+            cell.transform = CGAffineTransform(scaleX: 0.98 , y: 0.98)
+        }) { (animated) in
+            cell.transform = CGAffineTransform.identity
+        }
+        
 //        guard let cellData = self.arrGoods[indexPath.row] as? [String:Any] else {
 //            print("get row \(indexPath.row) error")
 //            return cell
@@ -153,6 +167,9 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
     
     
     //Animation
@@ -193,9 +210,9 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             }
             self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText)}
             self.searchBarActive = true
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
                 self.updateData()
-            }
+        }
         }
     }
     
