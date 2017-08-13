@@ -163,6 +163,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //將可選取改為false，tap關鍵盤才不會切到下一頁
+        myCollectionView.allowsSelection = false
         DispatchQueue.global(qos: .userInteractive).async
             {
                 if searchText == ""
@@ -202,21 +204,25 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.myCollectionView.reloadData()
     }
     
-    private func collectionAllowSelected(){
+    fileprivate func collectionAllowSelected(){
         myCollectionView.allowsSelection = true
     }
 
 }
 
-extension UIViewController {
+extension LandingViewController {
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
     func dismissKeyboard() {
         view.endEditing(true)
+        //允許選取在main serial裡
+        DispatchQueue.main.async {
+            self.collectionAllowSelected()
+        }
     }
 }
 
