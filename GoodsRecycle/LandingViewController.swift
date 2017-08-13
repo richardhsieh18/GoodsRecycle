@@ -207,6 +207,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     fileprivate func collectionAllowSelected(){
         myCollectionView.allowsSelection = true
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.dismissKeyboard()
+    }
 
 }
 
