@@ -1,0 +1,64 @@
+//
+//  DataGood.swift
+//  GoodsRecycle
+//
+//  Created by chang on 2017/8/11.
+//  Copyright © 2017年 chang. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+struct Good
+{
+    let resizeImage:String
+    let image:String
+    let model:String
+    let location:String
+    let address:String
+    let latitude:String
+    let longitude:String
+    
+    
+    
+}
+
+
+extension Good{
+    static func fetch(completion: @escaping ([Good]) -> Void)
+    {
+        let urlString = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=8e7d2004-bdcf-45e7-8937-1815f47e6db4"
+        Alamofire.request(urlString).responseJSON
+            {response in
+                guard response.result.isSuccess else
+                {
+                    let error  = response.result.error?.localizedDescription
+                    print(error!)
+                    return
+                }
+                guard let JSON = response.result.value as? [String:Any] else
+                {
+                    print("ERROR")
+                    return
+                }
+                
+                if let result = JSON["result"] as? [String:Any]
+                {
+                    if let results = result["results"] as? [[String:Any]]
+                    {
+                        var dataTransfer :[Good] = []
+                        for p in results
+                        {
+                            
+                            let goodItem = Good.init(resizeImage: p["縮圖網址"] as! String, image: p["照片網址"] as! String, model: p["物品類別"] as! String, location: p["地點"] as! String, address: p["地址"] as! String, latitude: p["緯度"] as! String, longitude: p["經度"] as! String)
+                           dataTransfer.append(goodItem)
+                        }
+                        completion(dataTransfer)
+                        //self.arrSearch = self.arrGoods
+                        //self.myCollectionView.reloadData()
+                    }
+                }
+        }
+        
+    }// fetchData
+}

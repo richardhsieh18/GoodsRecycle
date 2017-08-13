@@ -11,17 +11,6 @@ import Alamofire
 import AlamofireImage
 
 
-struct Good
-{
-    var resizeImage:String
-    var image:String
-    var model:String
-    var location:String
-    var address:String
-    var latitude:String
-    var longitude:String
-}
-
 class LandingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate
 {
     
@@ -41,53 +30,19 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         myCollectionView.dataSource = self
         barSearch.delegate = self
         //允許CollectionView選取
-        myCollectionView.allowsSelection = true
+        self.collectionAllowSelected()
 
-        loadData()
+        //重構後的Data  170814
+        Good.fetch { (dataTransfer) in
+            self.arrGoods = dataTransfer
+            //self.arrSearch = dataTransfer  //目前看來沒加這行也是可以正常運行
+            self.updateData()
+        }
         
-        //dismiss keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
     } // viewDidLoad
     
     override func viewWillAppear(_ animated: Bool) {
     }
-    
-    func loadData()
-    {
-        
-        let urlString = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=8e7d2004-bdcf-45e7-8937-1815f47e6db4"
-
-        Alamofire.request(urlString).responseJSON
-            {response in
-            guard response.result.isSuccess else
-            {
-                let error  = response.result.error?.localizedDescription
-                print(error!)
-                return
-            }
-            guard let JSON = response.result.value as? [String:Any] else
-            {
-                print("ERROR")
-                return
-            }
-
-            if let result = JSON["result"] as? [String:Any]
-            {
-                if let results = result["results"] as? [[String:Any]]
-                {
-                    for p in results
-                    {
-                        let goodItem = Good.init(resizeImage: p["縮圖網址"] as! String, image: p["照片網址"] as! String, model: p["物品類別"] as! String, location: p["地點"] as! String, address: p["地址"] as! String, latitude: p["緯度"] as! String, longitude: p["經度"] as! String)
-                        self.arrGoods.append(goodItem)
-                    }
-                    self.arrSearch = self.arrGoods
-                    self.myCollectionView.reloadData()
-                }
-            }
-        }
-        
-    }// loadData
     
     //使用collectionviewheader需要用這個delegate method
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
@@ -203,24 +158,30 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 
     
     //MARK: searchBar Delegate
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        myCollectionView.allowsSelection = false
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        DispatchQueue.global(qos: .userInteractive).async {
-            if searchText == ""
+        DispatchQueue.global(qos: .userInteractive).async
             {
-                self.arrSearch = self.arrGoods
-                DispatchQueue.main.async
+                if searchText == ""
                 {
-                    self.updateData()
+                    self.arrSearch = self.arrGoods
+                    DispatchQueue.main.async
+                    {
+                        self.updateData()
+                    }
+                    self.searchBarActive = false
+                    return
                 }
-                self.searchBarActive = false
-                return
+                self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText)}
+                self.searchBarActive = true
+                    DispatchQueue.main.async {
+                        self.updateData()
+                    }
             }
-            self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText)}
-            self.searchBarActive = true
-        DispatchQueue.main.async {
-                self.updateData()
-        }
-        }
+        self.hideKeyboardWhenTappedAround()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -228,18 +189,34 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.arrSearch = self.arrGoods
         barSearch.resignFirstResponder()
         self.updateData()
+        self.collectionAllowSelected()
     }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.hideKeyboardWhenTappedAround()
+    }
+    
     
     func updateData()
     {
         self.myCollectionView.reloadData()
     }
     
-    //MARK: dismiss Keyboard
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+    private func collectionAllowSelected(){
+        myCollectionView.allowsSelection = true
     }
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
