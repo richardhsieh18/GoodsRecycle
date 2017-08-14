@@ -68,16 +68,16 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
         
-//        cell.transform = CGAffineTransform(scaleX: 1.1 , y: 1.1)
-//        //Damping是彈跳數，越接近0，彈跳數越大
-//        //Velocity是動畫的初始速度，越接近0越平滑
-//        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0 , options: .curveEaseInOut, animations: {
-//            cell.transform = CGAffineTransform(scaleX: 0.98 , y: 0.98)
-//        }) { (animated) in
-//            cell.transform = CGAffineTransform.identity
-//        }
+        cell.transform = CGAffineTransform(scaleX: 1.1 , y: 1.1)
+        //Damping是彈跳數，越接近0，彈跳數越大
+        //Velocity是動畫的初始速度，越接近0越平滑
+        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0 , options: .curveEaseInOut, animations: {
+            cell.transform = CGAffineTransform(scaleX: 0.98 , y: 0.98)
+        }) { (animated) in
+            cell.transform = CGAffineTransform.identity
+        }
         
 //        guard let cellData = self.arrGoods[indexPath.row] as? [String:Any] else {
 //            print("get row \(indexPath.row) error")
@@ -110,7 +110,6 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         }
         
         }
-        
         
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
@@ -211,7 +210,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.dismissKeyboard()
     }
-
+    
 }
 
 extension LandingViewController {
