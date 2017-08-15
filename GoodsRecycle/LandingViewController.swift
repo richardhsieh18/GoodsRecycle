@@ -58,7 +58,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 //    }
     
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
         if self.searchBarActive
         {
             return arrSearch.count
@@ -68,7 +69,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LandingCollectionViewCell
         
         cell.transform = CGAffineTransform(scaleX: 1.1 , y: 1.1)
         //Damping是彈跳數，越接近0，彈跳數越大
@@ -108,8 +109,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         }else{
             cell.imgResize.image = placeholderImage
         }
-        
         }
+
         
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
@@ -120,7 +121,6 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("123")
-        
         performSegue(withIdentifier: "pop", sender: self)
     }
     
@@ -128,6 +128,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         if segue.identifier == "pop"  {
             let vc = segue.destination as! PopViewController
             let selectItemRows = myCollectionView.indexPathsForSelectedItems
+            print(selectItemRows!)
             vc.cellData = self.searchBarActive ? arrSearch[(selectItemRows?[0].row)!] : arrGoods[(selectItemRows?[0].row)!]
         }
     }
@@ -198,6 +199,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     }
     
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.dismissKeyboard()
+    }
+    
     func updateData()
     {
         self.myCollectionView.reloadData()
@@ -206,10 +211,16 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     fileprivate func collectionAllowSelected(){
         myCollectionView.allowsSelection = true
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.dismissKeyboard()
-    }
+
+// 更新collectionViewlayout 的func
+//    private func updateCollectionViewLayout(with size: CGSize)
+//    {
+//        if let layout = myCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+//        {
+//            layout.itemSize = CGSize(width: 200, height: Int(arc4random_uniform(100) + 100))
+//            layout.invalidateLayout()
+//        }
+//    }
     
 }
 

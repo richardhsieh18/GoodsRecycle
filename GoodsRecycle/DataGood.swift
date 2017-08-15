@@ -19,8 +19,6 @@ struct Good
     let latitude:String
     let longitude:String
     
-    
-    
 }
 
 
