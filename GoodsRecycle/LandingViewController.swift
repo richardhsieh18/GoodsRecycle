@@ -111,11 +111,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         }
         }
 
-        
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
-        cell.layer.borderColor = UIColor.orange.cgColor
-        cell.layer.borderWidth = 1
+        //cell.layer.borderColor = UIColor.orange.cgColor
+        //cell.layer.borderWidth = 1
         return cell
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fQl-KD-Dwt">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,11 +44,11 @@
                                     <size key="itemSize" width="200" height="260"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="Cell" id="9yp-Qh-tIz" customClass="LandingCollectionViewCell" customModule="GoodsRecycle" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="0.0" width="200" height="260"/>
+                                        <rect key="frame" x="5" y="5" width="200" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
@@ -87,6 +87,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="CBd-zE-gYH"/>
                     <connections>
                         <outlet property="barSearch" destination="p2K-1w-SMG" id="vCk-u5-cQj"/>
                         <outlet property="myCollectionView" destination="TEO-YD-u8W" id="0zv-NL-MJM"/>
@@ -95,7 +96,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115.94202898550725" y="121.46739130434784"/>
+            <point key="canvasLocation" x="1023.1884057971015" y="121.46739130434784"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8b8-2y-1Cf">
+            <objects>
+                <viewController id="Rm4-fH-gQv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2qT-qu-9vU"/>
+                        <viewControllerLayoutGuide type="bottom" id="psp-Vi-r1s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qah-QJ-Fua">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.32106891669999998" green="0.6175832108" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="sJS-vV-own"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1x-5S-pui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="923"/>
         </scene>
         <!--Pop View Controller-->
         <scene sceneID="UUx-3q-ZM8">
@@ -170,7 +190,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syn-bw-FWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.62318840579712" y="121.46739130434784"/>
+            <point key="canvasLocation" x="1760.8695652173915" y="121.46739130434784"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wFc-lR-myd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fQl-KD-Dwt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="KMN-MY-Yf3">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.52292947089999997" blue="0.41422637829999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ur8-Zh-Gk6"/>
+                        <segue destination="Rm4-fH-gQv" kind="relationship" relationship="viewControllers" id="Pmv-K7-Fb4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQ4-Ae-4Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="121.46739130434784"/>
         </scene>
     </scenes>
 </document>
