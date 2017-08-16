@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import AVFoundation
 
 
 class LandingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate
@@ -24,6 +25,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        if let layout = myCollectionView.collectionViewLayout as? WaterfallViewLayout
+        {
+            layout.delegate = self
+        }
         
         
         myCollectionView.delegate = self
@@ -114,8 +119,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
-        cell.layer.borderColor = UIColor.orange.cgColor
-        cell.layer.borderWidth = 1
+        //cell.layer.borderColor = UIColor.orange.cgColor
+        //cell.layer.borderWidth = 1
         return cell
     }
     
@@ -129,7 +134,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             let vc = segue.destination as! PopViewController
             let selectItemRows = myCollectionView.indexPathsForSelectedItems
             print(selectItemRows!)
-            vc.cellData = self.searchBarActive ? arrSearch[(selectItemRows?[0].row)!] : arrGoods[(selectItemRows?[0].row)!]
+            vc.cellData = self.searchBarActive ? arrSearch[(selectItemRows?[0].item)!] : arrGoods[(selectItemRows?[0].item)!]
         }
     }
     
@@ -238,5 +243,32 @@ extension LandingViewController {
             self.collectionAllowSelected()
         }
     }
+}
+
+//collectionView裡的content
+extension LandingViewController : WaterfallLayoutDelegate
+{
+    func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
+//        let photoStr = arrGoods[indexPath.item].resizeImage
+//        let photoUrl = URL(string: photoStr)
+//        let photoData = try? Data(contentsOf: photoUrl!)
+//        let photo = UIImage(data: photoData!)
+//        let boundingRect = CGRect(x: 0, y: 0, width: withWidth, height: CGFloat(MAXFLOAT))
+//        let rect = AVMakeRect(aspectRatio: (photo?.size)! , insideRect: boundingRect)
+        return CGFloat(arc4random_uniform(3) * 20 + 200)
+    }
+    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+        
+//        let annotationPadding = CGFloat(4)
+//        let annotationHeaderHeight = CGFloat(17)
+//        let photoStr = arrGoods[indexPath.item].resizeImage
+//        let photoUrl = URL(string: photoStr)
+//        let photoData = try? Data(contentsOf: photoUrl!)
+//        let photo = UIImage(data: photoData!)
+//        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+//        let height = annotationPadding + annotationHeaderHeight + annotationPadding
+        return 60
+    }
+
 }
 

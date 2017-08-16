@@ -16,6 +16,7 @@
 		04984A241F33F7DC00407B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04984A221F33F7DC00407B1D /* Main.storyboard */; };
 		04984A261F33F7DC00407B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04984A251F33F7DC00407B1D /* Assets.xcassets */; };
 		04984A291F33F7DC00407B1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04984A271F33F7DC00407B1D /* LaunchScreen.storyboard */; };
+		04B88CB31F43E61D00210D1D /* WaterfallViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */; };
 		04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04C524B21F3B31E5002CD6A0 /* backlogo.jpg */; };
 		04C524B51F3B36D5002CD6A0 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C524B41F3B36D5002CD6A0 /* PopViewController.swift */; };
 		3AB77A7E9B2DB4FE6DFFCF7A /* Pods_GoodsRecycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FD67A948DF1278B936A5C /* Pods_GoodsRecycle.framework */; };
@@ -35,6 +36,7 @@
 		04984A251F33F7DC00407B1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04984A281F33F7DC00407B1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04984A2A1F33F7DC00407B1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallViewLayout.swift; sourceTree = "<group>"; };
 		04C524B21F3B31E5002CD6A0 /* backlogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlogo.jpg; sourceTree = "<group>"; };
 		04C524B41F3B36D5002CD6A0 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		113C568B2FD10F9A452CEBDD /* Pods-GoodsRecycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodsRecycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodsRecycle/Pods-GoodsRecycle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				040ED6241F3D431D00398547 /* DataGood.swift */,
 				0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */,
 				04C524B41F3B36D5002CD6A0 /* PopViewController.swift */,
+				04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */,
 				04984A221F33F7DC00407B1D /* Main.storyboard */,
 				04984A251F33F7DC00407B1D /* Assets.xcassets */,
 				04984A271F33F7DC00407B1D /* LaunchScreen.storyboard */,
@@ -240,6 +243,7 @@
 				0414554D1F33FCAD00F09B48 /* LandingTableViewCell.swift in Sources */,
 				040ED6251F3D431D00398547 /* DataGood.swift in Sources */,
 				04984A1F1F33F7DC00407B1D /* AppDelegate.swift in Sources */,
+				04B88CB31F43E61D00210D1D /* WaterfallViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
