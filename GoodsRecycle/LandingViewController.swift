@@ -47,6 +47,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     } // viewDidLoad
     
     override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     //使用collectionviewheader需要用這個delegate method
@@ -96,7 +97,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             let cellData = self.arrSearch[indexPath.row]
             cell.lblTitle.text = cellData.model //cellData["物品類別"] as? String
             cell.lblLocation.text = cellData.location //cellData["地點"] as? String
-            let img_list = cellData.resizeImage //cellData["縮圖網址"] as? String
+            let img_list = cellData.image //cellData["縮圖網址"] as? String
             if let img_url = URL(string: img_list)
             {
                 cell.imgResize.af_setImage(withURL: img_url)
@@ -107,7 +108,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         let cellData = arrGoods[indexPath.row]
         cell.lblTitle.text = cellData.model //cellData["物品類別"] as? String
         cell.lblLocation.text = cellData.location //cellData["地點"] as? String
-        let img_list = cellData.resizeImage //cellData["縮圖網址"] as? String
+        let img_list = cellData.image //cellData["縮圖網址"] as? String
         if let img_url = URL(string: img_list)
         {
             cell.imgResize.af_setImage(withURL: img_url)
@@ -115,6 +116,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             cell.imgResize.image = placeholderImage
         }
         }
+
 
         
         cell.layer.cornerRadius = 20
@@ -182,7 +184,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
                     self.searchBarActive = false
                     return
                 }
-                self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText)}
+                self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText) || $0.location.contains(searchText)}
                 self.searchBarActive = true
                     DispatchQueue.main.async {
                         self.updateData()
@@ -210,7 +212,9 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     func updateData()
     {
+        self.myCollectionView.collectionViewLayout.invalidateLayout()
         self.myCollectionView.reloadData()
+        
     }
     
     fileprivate func collectionAllowSelected(){
@@ -255,7 +259,7 @@ extension LandingViewController : WaterfallLayoutDelegate
 //        let photo = UIImage(data: photoData!)
 //        let boundingRect = CGRect(x: 0, y: 0, width: withWidth, height: CGFloat(MAXFLOAT))
 //        let rect = AVMakeRect(aspectRatio: (photo?.size)! , insideRect: boundingRect)
-        return CGFloat(arc4random_uniform(3) * 20 + 200)
+        return CGFloat(arc4random_uniform(3) * 30 + 200)
     }
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
         

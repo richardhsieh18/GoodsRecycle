@@ -12,7 +12,7 @@ import AlamofireImage
 class PopViewController: UIViewController {
     
     
-    @IBOutlet weak var imgBackGround: UIImageView!
+    @IBOutlet weak var viewBack: UIView!
     @IBOutlet weak var imgPop: UIImageView!
     @IBOutlet weak var lblPopModel: UILabel!
     @IBOutlet weak var lblPopLocation: UILabel!
@@ -23,8 +23,8 @@ class PopViewController: UIViewController {
         super.viewDidLoad()
         //print(cellData)
         displayData()
-        self.imgBackGround.layer.cornerRadius = 10
-        self.imgBackGround.clipsToBounds = true
+        self.viewBack.layer.cornerRadius = 10
+        self.viewBack.clipsToBounds = true
     }
     
     func displayData(){

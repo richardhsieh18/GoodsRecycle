@@ -25,6 +25,7 @@ class WaterfallAttributes : UICollectionViewLayoutAttributes {
         copy.photoHeight = photoHeight
         return copy
     }
+    
 }
 
 class WaterfallViewLayout: UICollectionViewLayout {
@@ -65,14 +66,19 @@ class WaterfallViewLayout: UICollectionViewLayout {
                 //frame在collectionview的位置
                 let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
                 //frame的加上inset
+                print(frame)
                 let frameInset = frame.insetBy(dx: cellPadding, dy: cellPadding)
+                print(frameInset)
+                
                 let attributes = WaterfallAttributes(forCellWith: indexPath)
                 attributes.photoHeight = photoHeight
                 //frame設為計算過inset的frame
                 attributes.frame = frameInset
                 cache.append(attributes)
-                //兩者取大值
-                contentHeight = max(contentHeight, frame.maxY)
+                //兩者取大值，設定contentsize的高度
+                //contentHeight = max(contentHeight, frame.maxY)
+                //應該是要搜尋後更新contentHeight，但目前沒弄到
+                contentHeight = frame.maxY
                 //yOffset值為原本的加上cell的高度
                 yOffset[column] = yOffset[column] + height
                 //column值加上1
@@ -82,7 +88,8 @@ class WaterfallViewLayout: UICollectionViewLayout {
         }
     }
     
-    override var collectionViewContentSize: CGSize {
+    override var collectionViewContentSize: CGSize
+    {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
@@ -92,6 +99,8 @@ class WaterfallViewLayout: UICollectionViewLayout {
         
         for attributes in cache{
             if attributes.frame.intersects(rect){
+                print("1111111\(rect)")
+                print("5555555555\(attributes)")
                 layoutAttributes.append(attributes)
             }
         }
@@ -100,6 +109,11 @@ class WaterfallViewLayout: UICollectionViewLayout {
     
     override class var layoutAttributesClass : AnyClass {
         return WaterfallAttributes.self
+    }
+    
+    override func invalidateLayout() {
+        super.invalidateLayout()
+        cache.removeAll()
     }
     
 }
