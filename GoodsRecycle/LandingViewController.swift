@@ -34,6 +34,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         barSearch.delegate = self
+        barSearch.scopeButtonTitles = ["內湖","萬華",]
+        //barSearch.sizeToFit()
         //允許CollectionView選取
         self.collectionAllowSelected()
 
@@ -46,9 +48,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         
     } // viewDidLoad
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+    //override func viewWillAppear(_ animated: Bool) {    }
     
     //使用collectionviewheader需要用這個delegate method
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
@@ -91,21 +91,13 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 //            return cell
 //        }
         let placeholderImage = UIImage(named: "nsslsnapchat")
-
+        let cellData:Good
         if self.searchBarActive
         {
-            let cellData = self.arrSearch[indexPath.row]
-            cell.lblTitle.text = cellData.model //cellData["物品類別"] as? String
-            cell.lblLocation.text = cellData.location //cellData["地點"] as? String
-            let img_list = cellData.image //cellData["縮圖網址"] as? String
-            if let img_url = URL(string: img_list)
-            {
-                cell.imgResize.af_setImage(withURL: img_url)
-            }else{
-                cell.imgResize.image = placeholderImage
-            }
+            cellData = self.arrSearch[indexPath.row]
         }else{
-        let cellData = arrGoods[indexPath.row]
+            cellData = self.arrGoods[indexPath.row]
+        }
         cell.lblTitle.text = cellData.model //cellData["物品類別"] as? String
         cell.lblLocation.text = cellData.location //cellData["地點"] as? String
         let img_list = cellData.image //cellData["縮圖網址"] as? String
@@ -115,9 +107,6 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         }else{
             cell.imgResize.image = placeholderImage
         }
-        }
-
-
         
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
@@ -184,7 +173,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
                     self.searchBarActive = false
                     return
                 }
-                self.arrSearch = self.arrGoods.filter{$0.model.contains(searchText) || $0.location.contains(searchText)}
+                self.arrSearch = self.arrSearch.filter{$0.model.contains(searchText)}
                 self.searchBarActive = true
                     DispatchQueue.main.async {
                         self.updateData()
@@ -210,11 +199,24 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.dismissKeyboard()
     }
     
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        switch selectedScope {
+        case 1:
+            searchBar.text = ""
+            searchBarActive = true
+            self.arrSearch = self.arrGoods.filter{$0.location.contains("萬華")}
+        default :
+            searchBar.text = ""
+            searchBarActive = true
+            self.arrSearch = self.arrGoods.filter{$0.location.contains("內湖")}
+        }
+            updateData()
+    }
+    
     func updateData()
     {
         self.myCollectionView.collectionViewLayout.invalidateLayout()
         self.myCollectionView.reloadData()
-        
     }
     
     fileprivate func collectionAllowSelected(){
@@ -259,6 +261,7 @@ extension LandingViewController : WaterfallLayoutDelegate
 //        let photo = UIImage(data: photoData!)
 //        let boundingRect = CGRect(x: 0, y: 0, width: withWidth, height: CGFloat(MAXFLOAT))
 //        let rect = AVMakeRect(aspectRatio: (photo?.size)! , insideRect: boundingRect)
+//        return rect.height
         return CGFloat(arc4random_uniform(3) * 30 + 200)
     }
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
@@ -271,6 +274,7 @@ extension LandingViewController : WaterfallLayoutDelegate
 //        let photo = UIImage(data: photoData!)
 //        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
 //        let height = annotationPadding + annotationHeaderHeight + annotationPadding
+//        return height
         return 60
     }
 

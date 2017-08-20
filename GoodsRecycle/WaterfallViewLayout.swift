@@ -66,9 +66,9 @@ class WaterfallViewLayout: UICollectionViewLayout {
                 //frame在collectionview的位置
                 let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
                 //frame的加上inset
-                print(frame)
+                //print(frame)
                 let frameInset = frame.insetBy(dx: cellPadding, dy: cellPadding)
-                print(frameInset)
+                //print(frameInset)
                 
                 let attributes = WaterfallAttributes(forCellWith: indexPath)
                 attributes.photoHeight = photoHeight
@@ -99,8 +99,8 @@ class WaterfallViewLayout: UICollectionViewLayout {
         
         for attributes in cache{
             if attributes.frame.intersects(rect){
-                print("1111111\(rect)")
-                print("5555555555\(attributes)")
+                //print("1111111\(rect)")
+                print("每個Item的高:\(attributes.photoHeight)")
                 layoutAttributes.append(attributes)
             }
         }
