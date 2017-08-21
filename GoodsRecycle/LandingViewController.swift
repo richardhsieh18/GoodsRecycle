@@ -217,6 +217,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     {
         self.myCollectionView.collectionViewLayout.invalidateLayout()
         self.myCollectionView.reloadData()
+        self.myCollectionView.setContentOffset(CGPoint.zero, animated: true)
     }
     
     fileprivate func collectionAllowSelected(){
