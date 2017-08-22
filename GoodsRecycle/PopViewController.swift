@@ -25,6 +25,8 @@ class PopViewController: UIViewController {
         displayData()
         self.viewBack.layer.cornerRadius = 10
         self.viewBack.clipsToBounds = true
+        self.imgPop.layer.cornerRadius = 10
+        self.imgPop.clipsToBounds = true
     }
     
     func displayData(){

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040A790A1F34DA4800B65B58 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 040A79091F34DA4800B65B58 /* logo.jpg */; };
 		040ED6251F3D431D00398547 /* DataGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040ED6241F3D431D00398547 /* DataGood.swift */; };
 		0414554D1F33FCAD00F09B48 /* LandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */; };
+		041AB8F51F4BD54C00E2C783 /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F31F4BD54C00E2C783 /* cycle.png */; };
+		041AB8F61F4BD54C00E2C783 /* cycleFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F41F4BD54C00E2C783 /* cycleFont.png */; };
+		041AB8F81F4BD7FF00E2C783 /* baritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F71F4BD7FF00E2C783 /* baritem.png */; };
 		045172541F34084500C907F3 /* nsslsnapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 045172531F34084500C907F3 /* nsslsnapchat.png */; };
 		04984A1F1F33F7DC00407B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A1E1F33F7DC00407B1D /* AppDelegate.swift */; };
 		04984A211F33F7DC00407B1D /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A201F33F7DC00407B1D /* LandingViewController.swift */; };
@@ -19,14 +21,18 @@
 		04B88CB31F43E61D00210D1D /* WaterfallViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */; };
 		04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04C524B21F3B31E5002CD6A0 /* backlogo.jpg */; };
 		04C524B51F3B36D5002CD6A0 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C524B41F3B36D5002CD6A0 /* PopViewController.swift */; };
+		04E3F8DB1F4AB12200AAE79D /* popdismissbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */; };
+		04E3F8E11F4AB68F00AAE79D /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E3F8E01F4AB68F00AAE79D /* font.png */; };
 		3AB77A7E9B2DB4FE6DFFCF7A /* Pods_GoodsRecycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FD67A948DF1278B936A5C /* Pods_GoodsRecycle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02DA25402AD356527C5DDA3B /* Pods-GoodsRecycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodsRecycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodsRecycle/Pods-GoodsRecycle.release.xcconfig"; sourceTree = "<group>"; };
-		040A79091F34DA4800B65B58 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		040ED6241F3D431D00398547 /* DataGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGood.swift; sourceTree = "<group>"; };
 		0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingTableViewCell.swift; sourceTree = "<group>"; };
+		041AB8F31F4BD54C00E2C783 /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
+		041AB8F41F4BD54C00E2C783 /* cycleFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycleFont.png; sourceTree = "<group>"; };
+		041AB8F71F4BD7FF00E2C783 /* baritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baritem.png; sourceTree = "<group>"; };
 		045172531F34084500C907F3 /* nsslsnapchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsslsnapchat.png; sourceTree = "<group>"; };
 		045172551F3408CC00C907F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		04984A1B1F33F7DC00407B1D /* GoodsRecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodsRecycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +45,8 @@
 		04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallViewLayout.swift; sourceTree = "<group>"; };
 		04C524B21F3B31E5002CD6A0 /* backlogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlogo.jpg; sourceTree = "<group>"; };
 		04C524B41F3B36D5002CD6A0 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popdismissbutton.png; sourceTree = "<group>"; };
+		04E3F8E01F4AB68F00AAE79D /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
 		113C568B2FD10F9A452CEBDD /* Pods-GoodsRecycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodsRecycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodsRecycle/Pods-GoodsRecycle.debug.xcconfig"; sourceTree = "<group>"; };
 		CA6FD67A948DF1278B936A5C /* Pods_GoodsRecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodsRecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,8 +84,12 @@
 		04984A1D1F33F7DC00407B1D /* GoodsRecycle */ = {
 			isa = PBXGroup;
 			children = (
+				041AB8F71F4BD7FF00E2C783 /* baritem.png */,
+				041AB8F31F4BD54C00E2C783 /* cycle.png */,
+				041AB8F41F4BD54C00E2C783 /* cycleFont.png */,
+				04E3F8E01F4AB68F00AAE79D /* font.png */,
+				04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */,
 				04C524B21F3B31E5002CD6A0 /* backlogo.jpg */,
-				040A79091F34DA4800B65B58 /* logo.jpg */,
 				045172531F34084500C907F3 /* nsslsnapchat.png */,
 				04984A1E1F33F7DC00407B1D /* AppDelegate.swift */,
 				04984A201F33F7DC00407B1D /* LandingViewController.swift */,
@@ -175,8 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04984A291F33F7DC00407B1D /* LaunchScreen.storyboard in Resources */,
-				040A790A1F34DA4800B65B58 /* logo.jpg in Resources */,
+				04E3F8E11F4AB68F00AAE79D /* font.png in Resources */,
+				04E3F8DB1F4AB12200AAE79D /* popdismissbutton.png in Resources */,
 				045172541F34084500C907F3 /* nsslsnapchat.png in Resources */,
+				041AB8F81F4BD7FF00E2C783 /* baritem.png in Resources */,
+				041AB8F61F4BD54C00E2C783 /* cycleFont.png in Resources */,
+				041AB8F51F4BD54C00E2C783 /* cycle.png in Resources */,
 				04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */,
 				04984A261F33F7DC00407B1D /* Assets.xcassets in Resources */,
 				04984A241F33F7DC00407B1D /* Main.storyboard in Resources */,
