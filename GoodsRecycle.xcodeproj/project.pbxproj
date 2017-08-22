@@ -11,7 +11,6 @@
 		0414554D1F33FCAD00F09B48 /* LandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */; };
 		041AB8F51F4BD54C00E2C783 /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F31F4BD54C00E2C783 /* cycle.png */; };
 		041AB8F61F4BD54C00E2C783 /* cycleFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F41F4BD54C00E2C783 /* cycleFont.png */; };
-		041AB8F81F4BD7FF00E2C783 /* baritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F71F4BD7FF00E2C783 /* baritem.png */; };
 		045172541F34084500C907F3 /* nsslsnapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 045172531F34084500C907F3 /* nsslsnapchat.png */; };
 		04984A1F1F33F7DC00407B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A1E1F33F7DC00407B1D /* AppDelegate.swift */; };
 		04984A211F33F7DC00407B1D /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A201F33F7DC00407B1D /* LandingViewController.swift */; };
@@ -32,7 +31,6 @@
 		0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingTableViewCell.swift; sourceTree = "<group>"; };
 		041AB8F31F4BD54C00E2C783 /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
 		041AB8F41F4BD54C00E2C783 /* cycleFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycleFont.png; sourceTree = "<group>"; };
-		041AB8F71F4BD7FF00E2C783 /* baritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baritem.png; sourceTree = "<group>"; };
 		045172531F34084500C907F3 /* nsslsnapchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsslsnapchat.png; sourceTree = "<group>"; };
 		045172551F3408CC00C907F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		04984A1B1F33F7DC00407B1D /* GoodsRecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodsRecycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +82,6 @@
 		04984A1D1F33F7DC00407B1D /* GoodsRecycle */ = {
 			isa = PBXGroup;
 			children = (
-				041AB8F71F4BD7FF00E2C783 /* baritem.png */,
 				041AB8F31F4BD54C00E2C783 /* cycle.png */,
 				041AB8F41F4BD54C00E2C783 /* cycleFont.png */,
 				04E3F8E01F4AB68F00AAE79D /* font.png */,
@@ -190,7 +187,6 @@
 				04E3F8E11F4AB68F00AAE79D /* font.png in Resources */,
 				04E3F8DB1F4AB12200AAE79D /* popdismissbutton.png in Resources */,
 				045172541F34084500C907F3 /* nsslsnapchat.png in Resources */,
-				041AB8F81F4BD7FF00E2C783 /* baritem.png in Resources */,
 				041AB8F61F4BD54C00E2C783 /* cycleFont.png in Resources */,
 				041AB8F51F4BD54C00E2C783 /* cycle.png in Resources */,
 				04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */,
