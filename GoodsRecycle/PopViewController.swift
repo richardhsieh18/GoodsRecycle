@@ -81,7 +81,6 @@ class PopViewController: UIViewController {
             }
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
-        
     }
     
     
