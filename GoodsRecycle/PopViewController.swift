@@ -62,15 +62,17 @@ class PopViewController: UIViewController {
         good.setValue(cellData.latitude, forKey: "latitude")
         good.setValue(cellData.longitude, forKey: "longitude")
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yyyy/MM/dd H:mm:ss"
         let dateString = formatter.string(from: Date())
         good.setValue(dateString, forKey: "savetime")
         guard let img_url = URL(string: cellData.image) else{ return }
         let imagedata = try? Data(contentsOf: img_url)
         let image = UIImage(data: imagedata!)
-        let data = UIImageJPEGRepresentation(image!, 0.8)
+        let data = UIImageJPEGRepresentation(image!, 0.5)
         good.setValue(data, forKey: "image")
-
+        DispatchQueue.main.async {
+            self.btnDismiss(self)
+        }
         //存檔用do catch
         do {
             try context.save()
@@ -79,7 +81,7 @@ class PopViewController: UIViewController {
             print("error")
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
-        self.btnDismiss(self)
+        
     }
     
     

@@ -21,9 +21,10 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         saveTableView.delegate = self
         saveTableView.dataSource = self
-        self.retriveInfo()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.retriveInfo()
         saveTableView.reloadData()
     }
     
@@ -45,7 +46,18 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             saveArr.remove(at: indexPath.row)
+            self.deleteCoreDataRow()
             self.saveTableView.reloadData()
+        }
+    }
+    func deleteCoreDataRow(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let batch = NSBatchDeleteRequest(fetchRequest: SaveLists.fetchRequest())
+        do {
+            try appDelegate.persistentContainer.persistentStoreCoordinator.execute(batch, with: context)
+        }catch{
+            print(error)
         }
     }
     
