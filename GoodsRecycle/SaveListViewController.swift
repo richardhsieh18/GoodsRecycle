@@ -26,6 +26,10 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         self.retriveInfo()
         saveTableView.reloadData()
+        if saveArr.isEmpty == false {
+        //讓Scroll回到最上面
+        saveTableView.scrollToRow(at: [0,0], at: .top, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

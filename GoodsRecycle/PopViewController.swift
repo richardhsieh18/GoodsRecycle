@@ -48,7 +48,7 @@ class PopViewController: UIViewController {
     @IBAction func btnGo(_ sender: Any) {
         print(NSPersistentContainer.defaultDirectoryURL())
         insertGoodData()
-        
+        self.btnDismiss(self)
     }
     
     func insertGoodData(){
@@ -65,20 +65,20 @@ class PopViewController: UIViewController {
         formatter.dateFormat = "yyyy/MM/dd H:mm:ss"
         let dateString = formatter.string(from: Date())
         good.setValue(dateString, forKey: "savetime")
-        guard let img_url = URL(string: cellData.image) else{ return }
-        let imagedata = try? Data(contentsOf: img_url)
-        let image = UIImage(data: imagedata!)
-        let data = UIImageJPEGRepresentation(image!, 0.5)
+        //guard let img_url = URL(string: cellData.image) else{ return }
+        //let imagedata = try? Data(contentsOf: img_url)
+        //let image = UIImage(data: imagedata!)
+        //let data = UIImageJPEGRepresentation(image!, 0.5)
+        let data = UIImageJPEGRepresentation(imgPop.image!, 0.5)
         good.setValue(data, forKey: "image")
-        DispatchQueue.main.async {
-            self.btnDismiss(self)
-        }
-        //存檔用do catch
-        do {
-            try context.save()
-            print("儲存成功")
-        }catch{
-            print("error")
+               //存檔用do catch
+        DispatchQueue.global(qos:.userInitiated).async {
+            do {
+                try context.save()
+                print("儲存成功")
+            }catch{
+                print("error")
+            }
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
         
