@@ -192,13 +192,11 @@
                                                 <constraint firstItem="x47-6B-1ch" firstAttribute="top" secondItem="qmD-MR-meb" secondAttribute="top" constant="20" id="Onr-iR-cuI"/>
                                                 <constraint firstAttribute="bottom" secondItem="DLy-Tw-hOj" secondAttribute="bottom" constant="8" id="WkS-t6-D1E"/>
                                                 <constraint firstItem="x47-6B-1ch" firstAttribute="leading" secondItem="qmD-MR-meb" secondAttribute="leading" constant="8" id="Ztx-5r-6sv"/>
-                                                <constraint firstItem="DLy-Tw-hOj" firstAttribute="top" secondItem="x47-6B-1ch" secondAttribute="bottom" constant="8" id="awG-2o-p0K"/>
                                                 <constraint firstItem="x47-6B-1ch" firstAttribute="leading" secondItem="qmD-MR-meb" secondAttribute="leading" constant="8" id="bP8-HL-sa6"/>
                                                 <constraint firstItem="DLy-Tw-hOj" firstAttribute="leading" secondItem="qmD-MR-meb" secondAttribute="leading" constant="8" id="bYw-cH-xCL"/>
                                                 <constraint firstItem="DLy-Tw-hOj" firstAttribute="top" secondItem="x47-6B-1ch" secondAttribute="bottom" constant="8" id="dkc-5Q-oD9"/>
                                                 <constraint firstItem="x47-6B-1ch" firstAttribute="top" secondItem="qmD-MR-meb" secondAttribute="topMargin" constant="12" id="fus-SM-rY0"/>
                                                 <constraint firstItem="x47-6B-1ch" firstAttribute="top" secondItem="qmD-MR-meb" secondAttribute="top" constant="20" id="pJd-Fz-kaN"/>
-                                                <constraint firstItem="DLy-Tw-hOj" firstAttribute="top" secondItem="x47-6B-1ch" secondAttribute="bottom" constant="8" id="r9K-uE-HBl"/>
                                                 <constraint firstAttribute="trailing" secondItem="DLy-Tw-hOj" secondAttribute="trailing" constant="8" id="s40-DX-7qU"/>
                                                 <constraint firstItem="x47-6B-1ch" firstAttribute="leading" secondItem="DLy-Tw-hOj" secondAttribute="leading" id="y6T-iv-uAt"/>
                                             </constraints>

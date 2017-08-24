@@ -29,7 +29,6 @@ class PopViewController: UIViewController {
         self.viewBack.clipsToBounds = true
         self.imgPop.layer.cornerRadius = 10
         self.imgPop.clipsToBounds = true
-        self.imgPop.image = UIImage(named: "nsslsnapchat")
         //queryGoodData()
     }
     
