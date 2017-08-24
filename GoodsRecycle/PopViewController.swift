@@ -29,6 +29,7 @@ class PopViewController: UIViewController {
         self.viewBack.clipsToBounds = true
         self.imgPop.layer.cornerRadius = 10
         self.imgPop.clipsToBounds = true
+        self.imgPop.image = UIImage(named: "nsslsnapchat")
         //queryGoodData()
     }
     
@@ -37,7 +38,7 @@ class PopViewController: UIViewController {
         lblPopLocation.text = cellData.address
         if let img_url = URL(string: cellData.image)
         {
-              imgPop.af_setImage(withURL: img_url)
+            imgPop.af_setImage(withURL: img_url)
         }else{
             imgPop.image = UIImage(named: "nsslsnapchat")
         }
@@ -72,14 +73,12 @@ class PopViewController: UIViewController {
         let data = UIImageJPEGRepresentation(imgPop.image!, 0.5)
         good.setValue(data, forKey: "image")
                //存檔用do catch
-        DispatchQueue.global(qos:.userInitiated).async {
             do {
                 try context.save()
                 print("儲存成功")
             }catch{
                 print("error")
             }
-        }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
     }
     

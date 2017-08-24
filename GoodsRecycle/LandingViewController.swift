@@ -42,10 +42,9 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         //重構後的Data  170814
         Good.fetch { (dataTransfer) in
             self.arrGoods = dataTransfer
-            //self.arrSearch = dataTransfer  //目前看來沒加這行也是可以正常運行
+            self.arrSearch = dataTransfer 
             self.updateData()
         }
-        
     } // viewDidLoad
     
     //override func viewWillAppear(_ animated: Bool) {    }
