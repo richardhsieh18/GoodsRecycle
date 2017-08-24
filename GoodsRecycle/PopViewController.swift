@@ -72,6 +72,7 @@ class PopViewController: UIViewController {
         let data = UIImageJPEGRepresentation(imgPop.image!, 0.5)
         good.setValue(data, forKey: "image")
                //存檔用do catch
+        DispatchQueue.global(qos:.userInitiated).async {
             do {
                 try context.save()
                 print("儲存成功")
@@ -79,6 +80,7 @@ class PopViewController: UIViewController {
                 print("error")
             }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
+        }
     }
     
     
