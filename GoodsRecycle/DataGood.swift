@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Gloss
 
 struct Good
 {
@@ -19,16 +20,26 @@ struct Good
     let latitude:String
     let longitude:String
     
-init(resizeImage:String,image:String,model:String,location:String,address:String,latitude:String,longitude:String)
-    {
-        self.resizeImage = resizeImage
-        self.image = image
-        self.model = model
-        self.location = location
-        self.address = address
-        self.latitude = latitude
-        self.longitude = longitude
+    init(json: JSON) {
+                self.resizeImage = ("縮圖網址" <~~ json)!
+                self.image = ("照片網址" <~~ json)!
+                self.model = ("物品類別" <~~ json)!
+                self.location = ("地點" <~~ json)!
+                self.address = ("地址" <~~ json)!
+                self.latitude = ("緯度" <~~ json)!
+                self.longitude = ("經度" <~~ json)!
     }
+    
+//init(resizeImage:String,image:String,model:String,location:String,address:String,latitude:String,longitude:String)
+//    {
+//        self.resizeImage = resizeImage
+//        self.image = image
+//        self.model = model
+//        self.location = location
+//        self.address = address
+//        self.latitude = latitude
+//        self.longitude = longitude
+//    }
 }
 
 
@@ -59,15 +70,16 @@ extension Good{
                         {
                             
 //                            let goodItem = Good.init(resizeImage: p["縮圖網址"] as! String, image: p["照片網址"] as! String, model: p["物品類別"] as! String, location: p["地點"] as! String, address: p["地址"] as! String, latitude: p["緯度"] as! String, longitude: p["經度"] as! String)
-                            let goodItem = Good(
-                                resizeImage: p["縮圖網址"] as! String,
-                                image: p["照片網址"] as! String,
-                                model: p["物品類別"] as! String,
-                                location: p["地點"] as! String,
-                                address: p["地址"] as! String,
-                                latitude: p["緯度"] as! String,
-                                longitude: p["經度"] as! String
-                            )
+//                            let goodItem = Good(
+//                                resizeImage: p["縮圖網址"] as! String,
+//                                image: p["照片網址"] as! String,
+//                                model: p["物品類別"] as! String,
+//                                location: p["地點"] as! String,
+//                                address: p["地址"] as! String,
+//                                latitude: p["緯度"] as! String,
+//                                longitude: p["經度"] as! String
+//                            )
+                            let goodItem = Good(json: p)
                            dataTransfer.append(goodItem)
                         }
                         completion(dataTransfer)

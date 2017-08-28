@@ -4,17 +4,20 @@ PODS:
     - Alamofire (~> 4.1)
   - AlamofireNetworkActivityIndicator (2.2.0):
     - Alamofire (~> 4.5)
+  - Gloss (1.2.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - AlamofireImage
   - AlamofireNetworkActivityIndicator
+  - Gloss
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
+  Gloss: 4e036074610fdb993abcb958ebcd7332588e2333
 
-PODFILE CHECKSUM: 975b64b2bd1c742707d1fa8f1c37925f70434f79
+PODFILE CHECKSUM: fe27bf38e768957a791896c9cffc87511debd275
 
 COCOAPODS: 1.2.1

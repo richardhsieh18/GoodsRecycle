@@ -9,4 +9,5 @@ target 'GoodsRecycle' do
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireImage'
   pod 'AlamofireNetworkActivityIndicator'
+  pod 'Gloss'
 end
