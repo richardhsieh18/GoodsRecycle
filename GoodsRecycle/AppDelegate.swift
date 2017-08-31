@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireNetworkActivityIndicator
 import CoreData
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //AlamofireNetworkActivityIndicator
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0
+        //GADMobileAds.configure(withApplicationID: "ca-app-pub-7776511214644166~8611350677")
         return true
     }
 

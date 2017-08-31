@@ -10,13 +10,16 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import AVFoundation
+import GoogleMobileAds
 
 
-class LandingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate
+class LandingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate,GADBannerViewDelegate
 {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var barSearch: UISearchBar!
+    @IBOutlet weak var bannerView: GADBannerView!
+
     
     var arrGoods = [Good]()
     var arrSearch = [Good]()
@@ -45,6 +48,15 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             self.arrSearch = dataTransfer 
             self.updateData()
         }
+        
+        //Add banner
+        //bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+        bannerView.adUnitID = "ca-app-pub-7776511214644166/4396773498"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        //要加這行才廣告才會出來
+        bannerView.load(GADRequest())
+        
     } // viewDidLoad
     
     //override func viewWillAppear(_ animated: Bool) {    }
@@ -233,6 +245,41 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
 //        }
 //    }
     
+}
+//Add banner
+extension LandingViewController{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        view.addSubview(bannerView)
+        print("adViewDidReceiveAd")
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
+    }
 }
 
 extension LandingViewController {

@@ -10,4 +10,5 @@ target 'GoodsRecycle' do
   pod 'AlamofireImage'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'Gloss'
+  pod 'Google-Mobile-Ads-SDK', '~> 7.0'
 end

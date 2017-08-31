@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7oU-iW-OAg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7oU-iW-OAg">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +43,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-YD-u8W">
-                                <rect key="frame" x="0.0" y="120" width="414" height="614"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="ua3-ka-rTn" customClass="WaterfallViewLayout" customModule="GoodsRecycle" customModuleProvider="target"/>
                                 <cells>
@@ -98,10 +98,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMU-EM-9WT" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="637" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="TEO-YD-u8W" secondAttribute="bottom" constant="2" id="ILw-Ih-L2z"/>
+                            <constraint firstAttribute="bottom" secondItem="TEO-YD-u8W" secondAttribute="bottom" constant="99" id="ILw-Ih-L2z"/>
                             <constraint firstItem="TEO-YD-u8W" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="120" id="UeM-yS-l3H"/>
                             <constraint firstItem="TEO-YD-u8W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uTp-nR-zVN"/>
                             <constraint firstAttribute="trailing" secondItem="TEO-YD-u8W" secondAttribute="trailing" id="zea-1Y-ItP"/>
@@ -109,6 +114,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="清單" image="baritem" id="5NT-HN-hHn"/>
                     <connections>
+                        <outlet property="bannerView" destination="pMU-EM-9WT" id="StT-dP-2qY"/>
                         <outlet property="barSearch" destination="p2K-1w-SMG" id="vCk-u5-cQj"/>
                         <outlet property="myCollectionView" destination="TEO-YD-u8W" id="0zv-NL-MJM"/>
                         <segue destination="eke-Tv-TDP" kind="presentation" identifier="pop" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Kc1-fd-ssZ"/>
@@ -138,7 +144,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="392"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5dZ-nb-yvZ" id="qmD-MR-meb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="391.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="391.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x47-6B-1ch">
@@ -151,13 +157,13 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="24"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWX-ee-sT9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49N-vj-EHt">
-                                                                    <rect key="frame" x="350" y="0.0" width="48" height="24"/>
+                                                                    <rect key="frame" x="349" y="0.0" width="49" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
