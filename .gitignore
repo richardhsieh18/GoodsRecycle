@@ -21,3 +21,6 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+Pods/Gloss
+Pods/Google-Mobile-Ads-SDK
+Pods/Target Support Files/Gloss

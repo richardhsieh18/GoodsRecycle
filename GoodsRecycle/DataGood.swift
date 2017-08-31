@@ -83,6 +83,7 @@ extension Good{
                            dataTransfer.append(goodItem)
                         }
                         completion(dataTransfer)
+                        print(response.timeline)
                         //self.arrSearch = self.arrGoods
                         //self.myCollectionView.reloadData()
                     }
