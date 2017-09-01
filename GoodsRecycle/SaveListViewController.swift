@@ -28,7 +28,6 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         bannerView.delegate = self
         //要加這行才廣告才會出來
         bannerView.load(GADRequest())
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.retriveInfo()
@@ -37,6 +36,8 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //讓Scroll回到最上面
         saveTableView.scrollToRow(at: [0,0], at: .top, animated: true)
         }
+        //當點擊進來的時候將badgeValue設為nil
+        self.tabBarController?.tabBar.items?[1].badgeValue = nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

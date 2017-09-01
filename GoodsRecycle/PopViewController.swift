@@ -17,6 +17,8 @@ class PopViewController: UIViewController {
     @IBOutlet weak var imgPop: UIImageView!
     @IBOutlet weak var lblPopModel: UILabel!
     @IBOutlet weak var lblPopLocation: UILabel!
+    @IBOutlet weak var imgHeart: UIButton!
+    
     
     var cellData: Good!
     
@@ -47,6 +49,7 @@ class PopViewController: UIViewController {
     //MARK: CoreData
     @IBAction func btnGo(_ sender: Any) {
         print(NSPersistentContainer.defaultDirectoryURL())
+        imgHeart.setImage(UIImage(named: "heartfill"), for: .normal)
         insertGoodData()
         self.btnDismiss(self)
     }
@@ -80,6 +83,16 @@ class PopViewController: UIViewController {
                 print("error")
             }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
+        }
+        
+        //增加bagde圖示
+        let tabVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
+        let badgeStr = tabVC?.tabBar.items?[1].badgeValue
+        if badgeStr == nil {
+            tabVC?.tabBar.items?[1].badgeValue = "1"
+        }else{
+            let intValue = Int(badgeStr!)! + 1
+            tabVC?.tabBar.items?[1].badgeValue = String(describing: intValue)
         }
     }
     

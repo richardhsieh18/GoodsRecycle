@@ -142,13 +142,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRr-rZ-zxm" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="637" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5xF-Lc-3ov"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q4i-J5-SPB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,6 +222,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRr-rZ-zxm" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="637" width="414" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5xF-Lc-3ov"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -241,7 +241,7 @@
                             <constraint firstAttribute="bottom" secondItem="Q4i-J5-SPB" secondAttribute="bottom" constant="95" id="yFx-25-gUX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="收藏" image="heart" badgeValue="1" id="IGq-qf-8gW"/>
+                    <tabBarItem key="tabBarItem" title="收藏" image="heart" id="IGq-qf-8gW"/>
                     <connections>
                         <outlet property="bannerView" destination="FRr-rZ-zxm" id="g7N-QL-YG0"/>
                         <outlet property="saveTableView" destination="Q4i-J5-SPB" id="2O5-xs-xfl"/>
@@ -336,6 +336,7 @@
                         <blurEffect style="light"/>
                     </visualEffectView>
                     <connections>
+                        <outlet property="imgHeart" destination="3D2-R2-5Hu" id="6yv-Lu-iJm"/>
                         <outlet property="imgPop" destination="rlP-Z9-faJ" id="cZT-I3-euH"/>
                         <outlet property="lblPopLocation" destination="jwy-Uf-XvN" id="lbJ-en-1R9"/>
                         <outlet property="lblPopModel" destination="Zv0-Lq-FhP" id="i4Q-cf-lzr"/>
@@ -349,7 +350,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="JIf-DZ-Vmx">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7oU-iW-OAg" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabVC" automaticallyAdjustsScrollViewInsets="NO" id="7oU-iW-OAg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="g9N-7d-X4U">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
