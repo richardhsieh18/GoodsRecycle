@@ -85,6 +85,14 @@ class PopViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"圖片已儲存"), object: nil)
         }
         
+        //另一種寫法，其實差不多
+//        let tabVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
+//        if let badgeValue = tabBarController?.tabBar.items?[1].badgeValue {
+//            tabBarController?.tabBar.items?.first?.badgeValue = String((Int(badgeValue) ?? 0) + 1)
+//        } else {
+//            tabBarController?.tabBar.items?.first?.badgeValue = "1"
+//        }
+        
         //增加bagde圖示
         let tabVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
         let badgeStr = tabVC?.tabBar.items?[1].badgeValue

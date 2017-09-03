@@ -57,27 +57,44 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            self.deleteCoreDataRow(indexPath)
             saveArr.remove(at: indexPath.row)
-            self.deleteCoreDataRow()
-            self.saveTableView.reloadData()
+            self.saveTableView.deleteRows(at: [indexPath], with: .fade)
+            //self.saveTableView.reloadData()
         }
     }
-    func deleteCoreDataRow(){
+    //刪除coreData裡個別資料
+    func deleteCoreDataRow(_ indexPath: IndexPath){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let batch = NSBatchDeleteRequest(fetchRequest: SaveLists.fetchRequest())
-        do {
-            try appDelegate.persistentContainer.persistentStoreCoordinator.execute(batch, with: context)
-        }catch{
-            print(error)
-        }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SaveLists")
+        let sort = NSSortDescriptor(key: "savetime", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
+        fetchRequest.returnsObjectsAsFaults = false
+        let results = try? context.fetch(fetchRequest)
+        context.delete(results?[indexPath.row] as! NSManagedObject)
+        do { try context.save() } catch { print(error) }
     }
+
+    
+//這個功能看來是全刪
+//    func deleteCoreData(){
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let batch = NSBatchDeleteRequest(fetchRequest: SaveLists.fetchRequest())
+//        do {
+//            try appDelegate.persistentContainer.persistentStoreCoordinator.execute(batch, with: context)
+//        }catch{
+//            print(error)
+//        }
+//    }
+    
     
     func retriveInfo(){
         self.saveArr.removeAll()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        print(context)
+        //print(context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SaveLists")
         let sort = NSSortDescriptor(key: "savetime", ascending: false)
         fetchRequest.sortDescriptors = [sort]
@@ -85,7 +102,7 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         do {
             let results = try context.fetch(fetchRequest)
-            print(results)
+            //print(results)
             if results.count > 0 {
                 var arrResult = [String:Any]()
                 for result in results as! [NSManagedObject]{
