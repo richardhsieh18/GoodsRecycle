@@ -44,12 +44,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         //允許CollectionView選取
         self.collectionAllowSelected()
 
-        //重構後的Data  170814
-        Good.fetch { (dataTransfer) in
-            self.arrGoods = dataTransfer
-            self.arrSearch = dataTransfer 
-            self.updateData()
-        }
+        //將fetch拉成func
+        fetchData()
         
         //Add banner
         //bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
@@ -225,6 +221,15 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             self.arrSearch = self.arrGoods.filter{$0.location.contains("內湖")}
         }
             updateData()
+    }
+    
+    func fetchData() {
+        //重構後的Data  170814
+        Good.fetch { (dataTransfer) in
+            self.arrGoods = dataTransfer
+            self.arrSearch = dataTransfer
+            self.updateData()
+        }
     }
     
     func updateData()
