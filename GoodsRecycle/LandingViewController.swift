@@ -38,6 +38,8 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         myCollectionView.dataSource = self
         barSearch.delegate = self
         barSearch.scopeButtonTitles = ["內湖","萬華",]
+        //barSearch.tintColor = UIColor.white
+        //barSearch.barTintColor = UIColor(red: 67/255, green: 216/255, blue: 102/255, alpha: 1)
         //barSearch.sizeToFit()
         //允許CollectionView選取
         self.collectionAllowSelected()
@@ -309,7 +311,7 @@ extension LandingViewController : WaterfallLayoutDelegate
 //        let boundingRect = CGRect(x: 0, y: 0, width: withWidth, height: CGFloat(MAXFLOAT))
 //        let rect = AVMakeRect(aspectRatio: (photo?.size)! , insideRect: boundingRect)
 //        return rect.height
-        return CGFloat(arc4random_uniform(3) * 30 + 200)
+        return CGFloat(arc4random_uniform(3) * 30 + 180)
     }
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
         

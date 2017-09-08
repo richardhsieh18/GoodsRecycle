@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		040ED6251F3D431D00398547 /* DataGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040ED6241F3D431D00398547 /* DataGood.swift */; };
+		0411FF751F5EBFD500A1C50E /* SitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411FF741F5EBFD500A1C50E /* SitesViewController.swift */; };
 		0414554D1F33FCAD00F09B48 /* LandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */; };
 		041AB8F51F4BD54C00E2C783 /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F31F4BD54C00E2C783 /* cycle.png */; };
 		041AB8F61F4BD54C00E2C783 /* cycleFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 041AB8F41F4BD54C00E2C783 /* cycleFont.png */; };
 		045172541F34084500C907F3 /* nsslsnapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 045172531F34084500C907F3 /* nsslsnapchat.png */; };
+		045210B61F5D0FA600E7110E /* temple.png in Resources */ = {isa = PBXBuildFile; fileRef = 045210B41F5D0FA600E7110E /* temple.png */; };
+		045210B71F5D0FA600E7110E /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 045210B51F5D0FA600E7110E /* bridge.png */; };
 		04984A1F1F33F7DC00407B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A1E1F33F7DC00407B1D /* AppDelegate.swift */; };
 		04984A211F33F7DC00407B1D /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A201F33F7DC00407B1D /* LandingViewController.swift */; };
 		04984A241F33F7DC00407B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04984A221F33F7DC00407B1D /* Main.storyboard */; };
@@ -31,11 +34,14 @@
 /* Begin PBXFileReference section */
 		02DA25402AD356527C5DDA3B /* Pods-GoodsRecycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodsRecycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodsRecycle/Pods-GoodsRecycle.release.xcconfig"; sourceTree = "<group>"; };
 		040ED6241F3D431D00398547 /* DataGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGood.swift; sourceTree = "<group>"; };
+		0411FF741F5EBFD500A1C50E /* SitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SitesViewController.swift; sourceTree = "<group>"; };
 		0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingTableViewCell.swift; sourceTree = "<group>"; };
 		041AB8F31F4BD54C00E2C783 /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
 		041AB8F41F4BD54C00E2C783 /* cycleFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycleFont.png; sourceTree = "<group>"; };
 		045172531F34084500C907F3 /* nsslsnapchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsslsnapchat.png; sourceTree = "<group>"; };
 		045172551F3408CC00C907F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		045210B41F5D0FA600E7110E /* temple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temple.png; sourceTree = "<group>"; };
+		045210B51F5D0FA600E7110E /* bridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge.png; sourceTree = "<group>"; };
 		04984A1B1F33F7DC00407B1D /* GoodsRecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodsRecycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04984A1E1F33F7DC00407B1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04984A201F33F7DC00407B1D /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041774771F5BCFEC00084349 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				045210B41F5D0FA600E7110E /* temple.png */,
+				045210B51F5D0FA600E7110E /* bridge.png */,
+				041AB8F31F4BD54C00E2C783 /* cycle.png */,
+				041AB8F41F4BD54C00E2C783 /* cycleFont.png */,
+				04E3F8E01F4AB68F00AAE79D /* font.png */,
+				04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */,
+				04C524B21F3B31E5002CD6A0 /* backlogo.jpg */,
+				045172531F34084500C907F3 /* nsslsnapchat.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		04984A121F33F7DC00407B1D = {
 			isa = PBXGroup;
 			children = (
@@ -88,21 +109,17 @@
 		04984A1D1F33F7DC00407B1D /* GoodsRecycle */ = {
 			isa = PBXGroup;
 			children = (
-				041AB8F31F4BD54C00E2C783 /* cycle.png */,
-				041AB8F41F4BD54C00E2C783 /* cycleFont.png */,
-				04E3F8E01F4AB68F00AAE79D /* font.png */,
-				04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */,
-				04C524B21F3B31E5002CD6A0 /* backlogo.jpg */,
-				045172531F34084500C907F3 /* nsslsnapchat.png */,
+				041774771F5BCFEC00084349 /* image */,
 				04984A1E1F33F7DC00407B1D /* AppDelegate.swift */,
 				04984A201F33F7DC00407B1D /* LandingViewController.swift */,
-				040ED6241F3D431D00398547 /* DataGood.swift */,
 				0414554C1F33FCAD00F09B48 /* LandingTableViewCell.swift */,
+				040ED6241F3D431D00398547 /* DataGood.swift */,
 				04C524B41F3B36D5002CD6A0 /* PopViewController.swift */,
 				04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */,
 				04984A221F33F7DC00407B1D /* Main.storyboard */,
 				04B8764A1F4D026C000DFFB7 /* SaveListViewController.swift */,
 				04D400DD1F4D0507003DAEC0 /* SaveListTableViewCell.swift */,
+				0411FF741F5EBFD500A1C50E /* SitesViewController.swift */,
 				04984A251F33F7DC00407B1D /* Assets.xcassets */,
 				04984A271F33F7DC00407B1D /* LaunchScreen.storyboard */,
 				04CE75811F4C576200453B11 /* Lists.xcdatamodeld */,
@@ -196,7 +213,9 @@
 				04E3F8E11F4AB68F00AAE79D /* font.png in Resources */,
 				04E3F8DB1F4AB12200AAE79D /* popdismissbutton.png in Resources */,
 				045172541F34084500C907F3 /* nsslsnapchat.png in Resources */,
+				045210B61F5D0FA600E7110E /* temple.png in Resources */,
 				041AB8F61F4BD54C00E2C783 /* cycleFont.png in Resources */,
+				045210B71F5D0FA600E7110E /* bridge.png in Resources */,
 				041AB8F51F4BD54C00E2C783 /* cycle.png in Resources */,
 				04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */,
 				04984A261F33F7DC00407B1D /* Assets.xcassets in Resources */,
@@ -266,6 +285,7 @@
 				04D400DE1F4D0507003DAEC0 /* SaveListTableViewCell.swift in Sources */,
 				040ED6251F3D431D00398547 /* DataGood.swift in Sources */,
 				04984A1F1F33F7DC00407B1D /* AppDelegate.swift in Sources */,
+				0411FF751F5EBFD500A1C50E /* SitesViewController.swift in Sources */,
 				04B88CB31F43E61D00210D1D /* WaterfallViewLayout.swift in Sources */,
 				04CE75831F4C576200453B11 /* Lists.xcdatamodeld in Sources */,
 			);
