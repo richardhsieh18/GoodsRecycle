@@ -62,7 +62,7 @@ class MapNaviViewController: UIViewController,MKMapViewDelegate {
         result?.canShowCallout = true
         
         let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
-        leftButton.setImage(UIImage(named: "navigation.png"), for: .normal)
+        leftButton.setImage(UIImage(named: "navigation"), for: .normal)
         leftButton.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         result?.leftCalloutAccessoryView = leftButton
         

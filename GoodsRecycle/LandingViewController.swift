@@ -24,6 +24,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     var arrGoods = [Good]()
     var arrSearch = [Good]()
     var searchBarActive:Bool = false
+    let refresh: UIRefreshControl = UIRefreshControl()
 
     override func viewDidLoad()
     {
@@ -45,7 +46,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.collectionAllowSelected()
 
         //將fetch拉成func
-        fetchData()
+        self.fetchData()
         
         //Add banner
         //bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
@@ -54,6 +55,10 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
         bannerView.delegate = self
         //要加這行才廣告才會出來
         bannerView.load(GADRequest())
+        
+        //加上refreschControl
+        refresh.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        myCollectionView.addSubview(refresh)
         
     } // viewDidLoad
     
@@ -229,7 +234,11 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
             self.arrGoods = dataTransfer
             self.arrSearch = dataTransfer
             self.updateData()
+            //170909 加上refresh功能需補上end才會停止，並且將scopebutton的index改回0
+            self.barSearch.selectedScopeButtonIndex = 0
+            self.refresh.endRefreshing()
         }
+        
     }
     
     func updateData()

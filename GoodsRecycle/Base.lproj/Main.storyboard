@@ -445,12 +445,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3D-cd-3v0">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3D-cd-3v0">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n3D-cd-3v0" firstAttribute="leading" secondItem="b1P-tV-teK" secondAttribute="leading" id="CAn-sc-ijY"/>
+                            <constraint firstItem="n3D-cd-3v0" firstAttribute="top" secondItem="4ep-Ca-yIq" secondAttribute="bottom" id="SBg-0R-SFB"/>
+                            <constraint firstAttribute="trailing" secondItem="n3D-cd-3v0" secondAttribute="trailing" id="UJ6-7o-OJq"/>
+                            <constraint firstAttribute="bottom" secondItem="n3D-cd-3v0" secondAttribute="bottom" id="y4L-tm-tSk"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="naviMap" destination="n3D-cd-3v0" id="D6R-2a-lly"/>
