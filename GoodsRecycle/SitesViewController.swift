@@ -15,6 +15,8 @@ class SitesViewController: UIViewController,GADBannerViewDelegate {
     @IBOutlet weak var wanView: UIView!
     @IBOutlet weak var bannerView: GADBannerView!
     
+    let segueNavi = "startNavi"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,21 +45,29 @@ class SitesViewController: UIViewController,GADBannerViewDelegate {
             self.wanView.transform = CGAffineTransform.identity
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MapNaviViewController
+        let btn = sender as! UIButton
+        switch btn.tag {
+        case 100:
+            vc.selectedSiteLat = 25.066028
+            vc.selectedSiteLon = 121.584503
+            vc.selectedTitle = "內湖展示場"
+            vc.selectedSubtitle = "臺北市內湖區行忠路178巷1號"
+        case 101:
+            vc.selectedSiteLat = 25.03718
+            vc.selectedSiteLon = 121.49546
+            vc.selectedTitle = "萬華展示場"
+            vc.selectedSubtitle = "臺北市萬華區環河南路2段133號"
+        default:
+            print("nothing")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func navigationStart(_ sender: UIButton) {
+        //sender也一併傳送過去
+        performSegue(withIdentifier: segueNavi, sender: sender)
     }
-    */
-
+    
 }

@@ -15,6 +15,7 @@
 		045172541F34084500C907F3 /* nsslsnapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 045172531F34084500C907F3 /* nsslsnapchat.png */; };
 		045210B61F5D0FA600E7110E /* temple.png in Resources */ = {isa = PBXBuildFile; fileRef = 045210B41F5D0FA600E7110E /* temple.png */; };
 		045210B71F5D0FA600E7110E /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 045210B51F5D0FA600E7110E /* bridge.png */; };
+		049230BD1F6300D800D30D93 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 049230BC1F6300D800D30D93 /* navigation.png */; };
 		04984A1F1F33F7DC00407B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A1E1F33F7DC00407B1D /* AppDelegate.swift */; };
 		04984A211F33F7DC00407B1D /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04984A201F33F7DC00407B1D /* LandingViewController.swift */; };
 		04984A241F33F7DC00407B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04984A221F33F7DC00407B1D /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		045172551F3408CC00C907F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		045210B41F5D0FA600E7110E /* temple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temple.png; sourceTree = "<group>"; };
 		045210B51F5D0FA600E7110E /* bridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge.png; sourceTree = "<group>"; };
+		049230BC1F6300D800D30D93 /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
 		04984A1B1F33F7DC00407B1D /* GoodsRecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodsRecycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04984A1E1F33F7DC00407B1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04984A201F33F7DC00407B1D /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		041774771F5BCFEC00084349 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				049230BC1F6300D800D30D93 /* navigation.png */,
 				045210B41F5D0FA600E7110E /* temple.png */,
 				045210B51F5D0FA600E7110E /* bridge.png */,
 				041AB8F31F4BD54C00E2C783 /* cycle.png */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04984A291F33F7DC00407B1D /* LaunchScreen.storyboard in Resources */,
+				049230BD1F6300D800D30D93 /* navigation.png in Resources */,
 				04E3F8E11F4AB68F00AAE79D /* font.png in Resources */,
 				04E3F8DB1F4AB12200AAE79D /* popdismissbutton.png in Resources */,
 				045172541F34084500C907F3 /* nsslsnapchat.png in Resources */,
