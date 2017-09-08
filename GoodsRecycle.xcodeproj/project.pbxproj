@@ -24,6 +24,7 @@
 		04B88CB31F43E61D00210D1D /* WaterfallViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */; };
 		04C524B31F3B31E5002CD6A0 /* backlogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04C524B21F3B31E5002CD6A0 /* backlogo.jpg */; };
 		04C524B51F3B36D5002CD6A0 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C524B41F3B36D5002CD6A0 /* PopViewController.swift */; };
+		04C7243A1F62AA8D0081582C /* MapNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C724391F62AA8D0081582C /* MapNaviViewController.swift */; };
 		04CE75831F4C576200453B11 /* Lists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04CE75811F4C576200453B11 /* Lists.xcdatamodeld */; };
 		04D400DE1F4D0507003DAEC0 /* SaveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D400DD1F4D0507003DAEC0 /* SaveListTableViewCell.swift */; };
 		04E3F8DB1F4AB12200AAE79D /* popdismissbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */; };
@@ -53,6 +54,7 @@
 		04B88CB21F43E61D00210D1D /* WaterfallViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallViewLayout.swift; sourceTree = "<group>"; };
 		04C524B21F3B31E5002CD6A0 /* backlogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlogo.jpg; sourceTree = "<group>"; };
 		04C524B41F3B36D5002CD6A0 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		04C724391F62AA8D0081582C /* MapNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNaviViewController.swift; sourceTree = "<group>"; };
 		04CE75821F4C576200453B11 /* Lists.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lists.xcdatamodel; sourceTree = "<group>"; };
 		04D400DD1F4D0507003DAEC0 /* SaveListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveListTableViewCell.swift; sourceTree = "<group>"; };
 		04E3F8DA1F4AB12200AAE79D /* popdismissbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popdismissbutton.png; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				04B8764A1F4D026C000DFFB7 /* SaveListViewController.swift */,
 				04D400DD1F4D0507003DAEC0 /* SaveListTableViewCell.swift */,
 				0411FF741F5EBFD500A1C50E /* SitesViewController.swift */,
+				04C724391F62AA8D0081582C /* MapNaviViewController.swift */,
 				04984A251F33F7DC00407B1D /* Assets.xcassets */,
 				04984A271F33F7DC00407B1D /* LaunchScreen.storyboard */,
 				04CE75811F4C576200453B11 /* Lists.xcdatamodeld */,
@@ -288,6 +291,7 @@
 				0411FF751F5EBFD500A1C50E /* SitesViewController.swift in Sources */,
 				04B88CB31F43E61D00210D1D /* WaterfallViewLayout.swift in Sources */,
 				04CE75831F4C576200453B11 /* Lists.xcdatamodeld in Sources */,
+				04C7243A1F62AA8D0081582C /* MapNaviViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

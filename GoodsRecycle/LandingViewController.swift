@@ -169,6 +169,7 @@ class LandingViewController: UIViewController,UICollectionViewDelegate,UICollect
     //MARK: searchBar Delegate
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         myCollectionView.allowsSelection = false
+        self.hideKeyboardWhenTappedAround()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
