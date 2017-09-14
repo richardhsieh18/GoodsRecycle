@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,16 +26,19 @@
                                 <rect key="frame" x="68" y="230" width="185" height="108"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycle.png" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-QA-FGq">
-                                <rect key="frame" x="12" y="139" width="292" height="291"/>
+                                <rect key="frame" x="4" y="127.5" width="312" height="313"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3wr-QA-FGq" secondAttribute="height" multiplier="347:348" id="34R-O1-rdG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3wr-QA-FGq" firstAttribute="centerY" secondItem="PxE-dt-m0Y" secondAttribute="centerY" id="D0u-ih-HAS"/>
-                            <constraint firstItem="3wr-QA-FGq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-4" id="RKS-NY-GG5"/>
-                            <constraint firstItem="3wr-QA-FGq" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="119" id="VZA-cE-F5y"/>
+                            <constraint firstItem="3wr-QA-FGq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CK7-zV-TAA"/>
+                            <constraint firstAttribute="trailing" secondItem="3wr-QA-FGq" secondAttribute="trailing" constant="4" id="F2k-mz-cka"/>
+                            <constraint firstItem="3wr-QA-FGq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aUk-LZ-4kU"/>
                             <constraint firstItem="PxE-dt-m0Y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dqp-db-kQH"/>
-                            <constraint firstItem="3wr-QA-FGq" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="fmP-8d-j0e"/>
+                            <constraint firstItem="3wr-QA-FGq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="4" id="fcl-3n-nre"/>
                             <constraint firstItem="PxE-dt-m0Y" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gtq-Dm-ulQ"/>
                         </constraints>
                     </view>
