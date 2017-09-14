@@ -25,10 +25,17 @@ class SitesViewController: UIViewController,GADBannerViewDelegate {
         neiView.clipsToBounds = true
         wanView.clipsToBounds = true
         
-        let leftTransform = CGAffineTransform.init(translationX: -1000, y: 0)
-        let rightTransform = CGAffineTransform.init(translationX: +1000, y: 0)
-        neiView.transform = leftTransform
-        wanView.transform = rightTransform
+        //原本左移右移的動畫
+        //let leftTransform = CGAffineTransform.init(translationX: -1000, y: 0)
+        //let rightTransform = CGAffineTransform.init(translationX: +1000, y: 0)
+        //neiView.transform = leftTransform
+        //wanView.transform = rightTransform
+        
+        //換成3D動畫 layer
+        let leftTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
+        let rightTransform = CATransform3DTranslate(CATransform3DIdentity, +500, 100, 0)
+        neiView.layer.transform = leftTransform
+        wanView.layer.transform = rightTransform
         
         //Add banner
         //bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
