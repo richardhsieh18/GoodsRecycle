@@ -46,6 +46,7 @@ class MapNaviViewController: UIViewController,MKMapViewDelegate {
         
         
         naviMap.addAnnotation(annotation)
+        //naviMap.showAnnotations([annotation], animated: true)
         //Show Callout面板
         naviMap.selectAnnotation(annotation, animated: true)
     }
@@ -53,9 +54,10 @@ class MapNaviViewController: UIViewController,MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "Pin"
-        var result = naviMap.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        var result = naviMap.dequeueReusableAnnotationView(withIdentifier: "Pin") as? MKPinAnnotationView
         if result == nil {
-            result = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            //MKPinAnnotationView,MKAnnotationView是不一樣的原本用後者大頭針跑不出來
+            result = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         } else {
             result?.annotation = annotation
         }

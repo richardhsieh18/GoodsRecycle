@@ -15,7 +15,7 @@ class SitesViewController: UIViewController,GADBannerViewDelegate {
     @IBOutlet weak var wanView: UIView!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    let segueNavi = "startNavi"
+    let segueNavi:String = "startNavi"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,9 @@ class SitesViewController: UIViewController,GADBannerViewDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == self.segueNavi {
         let vc = segue.destination as! MapNaviViewController
         let btn = sender as! UIButton
         switch btn.tag {
@@ -62,6 +64,7 @@ class SitesViewController: UIViewController,GADBannerViewDelegate {
             vc.selectedSubtitle = "臺北市萬華區環河南路2段133號"
         default:
             print("nothing")
+        }
         }
     }
     
