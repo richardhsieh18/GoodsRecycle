@@ -75,6 +75,7 @@ class MapNaviViewController: UIViewController,MKMapViewDelegate {
         let coordinate = CLLocationCoordinate2DMake(selectedSiteLat, selectedSiteLon)
         let placemark = MKPlacemark(coordinate: coordinate)
         let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = selectedTitle
         let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         MKMapItem.openMaps(with: [mapItem], launchOptions: options)
     }

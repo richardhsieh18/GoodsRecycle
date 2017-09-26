@@ -22,6 +22,8 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         saveTableView.delegate = self
         saveTableView.dataSource = self
+        //saveTableView.rowHeight = UITableViewAutomaticDimension
+        //saveTableView.estimatedRowHeight = 22
         
         bannerView.adUnitID = "ca-app-pub-7776511214644166/4396773498"
         bannerView.rootViewController = self
@@ -55,14 +57,31 @@ class SaveListViewController: UIViewController,UITableViewDelegate,UITableViewDa
             return cell
         }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            self.deleteCoreDataRow(indexPath)
-            saveArr.remove(at: indexPath.row)
-            self.saveTableView.deleteRows(at: [indexPath], with: .fade)
-            //self.saveTableView.reloadData()
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            self.deleteCoreDataRow(indexPath)
+//            saveArr.remove(at: indexPath.row)
+//            self.saveTableView.deleteRows(at: [indexPath], with: .fade)
+//            //self.saveTableView.reloadData()
+//        }
+//    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let shareAction = UITableViewRowAction(style: .default, title: "分享") { (action, indexPath) in
+            let defaultText = "\(self.saveArr[indexPath.row]["location"] as! String)  \(self.saveArr[indexPath.row]["model"] as! String)"
+            guard let imageData = self.saveArr[indexPath.row]["image"] as? Data else { return }
+            let imageToShare = UIImage(data: imageData)
+            let activeController = UIActivityViewController(activityItems: [defaultText,imageToShare!], applicationActivities: nil)
+            self.present(activeController, animated: true, completion: nil)
         }
+        let deleteAction = UITableViewRowAction(style: .default, title: "刪除") { (action, indexPath) in
+            self.deleteCoreDataRow(indexPath)
+            self.saveArr.remove(at: indexPath.row)
+            self.saveTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        shareAction.backgroundColor = UIColor(red: 28.0 / 255.0, green: 165.0 / 255.0, blue: 253.0 / 255.0, alpha: 1.0)
+        return [deleteAction,shareAction]
     }
+
     //刪除coreData裡個別資料
     func deleteCoreDataRow(_ indexPath: IndexPath){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
