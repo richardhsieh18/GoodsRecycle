@@ -54,7 +54,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ypJ-uj-z3C">
-                                                    <rect key="frame" x="4" y="4" width="192" height="164"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="168"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="10"/>
@@ -82,11 +82,11 @@
                                             <constraint firstItem="MFb-TU-FSf" firstAttribute="top" secondItem="ZZu-83-lSq" secondAttribute="bottom" id="Osd-67-3DA"/>
                                             <constraint firstAttribute="trailing" secondItem="MFb-TU-FSf" secondAttribute="trailing" constant="4" id="T72-rh-Xjm"/>
                                             <constraint firstItem="MFb-TU-FSf" firstAttribute="top" secondItem="ZZu-83-lSq" secondAttribute="bottom" id="TFj-PO-qq6"/>
-                                            <constraint firstItem="ypJ-uj-z3C" firstAttribute="leading" secondItem="9yp-Qh-tIz" secondAttribute="leading" constant="4" id="Xxi-yt-wov"/>
-                                            <constraint firstAttribute="trailing" secondItem="ypJ-uj-z3C" secondAttribute="trailing" constant="4" id="dUd-Mj-et1"/>
+                                            <constraint firstItem="ypJ-uj-z3C" firstAttribute="leading" secondItem="9yp-Qh-tIz" secondAttribute="leading" id="Xxi-yt-wov"/>
+                                            <constraint firstAttribute="trailing" secondItem="ypJ-uj-z3C" secondAttribute="trailing" id="dUd-Mj-et1"/>
                                             <constraint firstItem="ZZu-83-lSq" firstAttribute="top" secondItem="ypJ-uj-z3C" secondAttribute="bottom" id="dzd-cF-wSI"/>
                                             <constraint firstAttribute="bottom" secondItem="MFb-TU-FSf" secondAttribute="bottom" id="kdE-es-cFK"/>
-                                            <constraint firstItem="ypJ-uj-z3C" firstAttribute="top" secondItem="9yp-Qh-tIz" secondAttribute="top" constant="4" id="qOr-4b-b8s"/>
+                                            <constraint firstItem="ypJ-uj-z3C" firstAttribute="top" secondItem="9yp-Qh-tIz" secondAttribute="top" id="qOr-4b-b8s"/>
                                         </constraints>
                                         <size key="customSize" width="200" height="224"/>
                                         <connections>
@@ -149,7 +149,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="459"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5dZ-nb-yvZ" id="qmD-MR-meb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="458.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="458.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DLy-Tw-hOj">
@@ -515,6 +515,7 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rlP-Z9-faJ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="392"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
                                         <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-9X-zTv">
                                             <rect key="frame" x="342" y="0.0" width="32" height="32"/>
